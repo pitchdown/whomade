@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h2 class="mb-4">🎮 Game Over!</h2>
+    <p><strong>Correct Answers:</strong> {{ results.is_correct }}</p>
+    <p><strong>Wrong Answers:</strong> {{ results.is_false }}</p>
+
+    <div class="mt-4">
+        <a href="{% url 'index' %}" class="btn btn-primary me-2">🏠 Home</a>
+        <a href="{% url 'game' %}" class="btn btn-success">🔄 Play Again</a>
+    </div>
+</div>
+{% endblock %}

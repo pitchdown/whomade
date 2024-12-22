@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h2>{{ user.username }}'S PROFILE</h2>
+    <p><strong>TOTAL QUESTIONS:</strong> {{ total_questions }}</p>
+    <p><strong>CORRECT ANSWERS:</strong> {{ correct_answers }}</p>
+    <p><strong>WRONG ANSWERS:</strong> {{ wrong_answers }}</p>
+</div>
+{% endblock %}

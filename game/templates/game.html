@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-start" style="height: 90vh;">
+    <div class="text-center" style="margin-top: 10vh;">
+        <h5>Round {{ current_round }} of {{ total_rounds }}</h5>
+        <div class="mb-4">
+            <h3>{{ album_name }}</h3>
+            <img id="album-image" src="{{ album_image }}" width="200" height="200"><br>
+        </div>
+
+        <div class="row">
+            {% for artist in artists %}
+            <div class="col-6 mb-2">
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="artist_name" value="{{ artist }}">
+                    <button type="submit" class="btn btn-outline-primary w-100">
+                        {{ artist }}
+                    </button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="leaderboard-container">
+    <h2>LEADERBOARD</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>RANK</th>
+                <th>USERNAME</th>
+                <th>AVERAGE GUESS RATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in leaderboard %}
+                <tr>
+                    <td class="rank">{{ forloop.counter }}</td>
+                    <td>{{ player.username }}</td>
+                    <td>{{ player.average_guess }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
